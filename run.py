@@ -9,5 +9,5 @@ def run():
     print(bot)
 
 scheduler = BlockingScheduler()
-scheduler.add_job(run,  'cron', hour='8-18')
+scheduler.add_job(run,  'cron', hour='7-20')
 scheduler.start()
