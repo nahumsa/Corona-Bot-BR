@@ -25,7 +25,7 @@ class Coronavirus():
             #print(f"Casos Descartados: {descarted_cases}")
             #print(f"Mortes: {deaths}")
             
-            return f"País: Brasil\nCasos Possíveis: {possible_Cases}\nCasos Confirmados: {confirmed_Cases}\nCasos Descartados: {descarted_cases}\nMortes: {deaths}\nData e Hora : {dt_string} \nDados de : http://plataforma.saude.gov.br/novocoronavirus/ \n"            
+            return f"País: Brasil\nCasos Possíveis: {possible_Cases}\nCasos Confirmados: {confirmed_Cases}\nCasos Descartados: {descarted_cases}\nMortes: {deaths}\nData e Hora : {dt_string} \nDados de : http://plataforma.saude.gov.br/novocoronavirus/ \n#coronavirus"            
         
         except:
             now = datetime.now() 
