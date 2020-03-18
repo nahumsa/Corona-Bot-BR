@@ -32,7 +32,7 @@ class Coronavirus():
             dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
             
             print("Something is wrong.")
-            return f"Data e Hora : {dt_string} \nDados de : http://plataforma.saude.gov.br/novocoronavirus/ \n"
+            return f"Estamos com problemas de contatar o site./nData e Hora : {dt_string} \nDados de : http://plataforma.saude.gov.br/novocoronavirus/ \n"
 
 
     def get_data(self):
@@ -41,7 +41,7 @@ class Coronavirus():
         try:                    
             self.data = []
             self.driver.get('http://plataforma.saude.gov.br/novocoronavirus/')
-            time.sleep(5)
+            time.sleep(10)
             for i in np.arange(1,4+1,1):
                 #order: Possible Cases, Confirmed Cases, descarted cases, deaths
                 dat = self.driver.find_element_by_xpath(f'/html/body/div[2]/div[2]/div[1]/div[{i}]/div[2]/h4').text.split(" ")
