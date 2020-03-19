@@ -16,3 +16,5 @@ O código foi feito para python 3. Primeiramente crie e ative um virtual environ
 - `pip3 install requirements.txt`
 
 Para rodar o programa Basta rodar o `run.py`.
+
+# Siga em [@br_coronav](https://twitter.com/br_coronav)
