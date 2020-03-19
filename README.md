@@ -1,6 +1,10 @@
 # Monitoramento do Coronavirus no Brasil
 
-Esse bot serve para monitorar o funcionamento do coronavirus no Brasil segundo o [site oficial do governo](http://plataforma.saude.gov.br/novocoronavirus/). O código foi baseado no seguinte [post](https://towardsdatascience.com/how-to-track-coronavirus-with-python-a5320b778c8e). 
+Esse bot serve para monitorar o funcionamento do coronavirus no Brasil segundo o [site oficial do governo](http://plataforma.saude.gov.br/novocoronavirus/). 
+
+O código foi baseado no seguinte [post](https://towardsdatascience.com/how-to-track-coronavirus-with-python-a5320b778c8e). 
+
+# Instruções
 
 Primeiramente é necessário instalar o [ChromeDriver](https://chromedriver.chromium.org/). Caso esteja utilizando Linux, deve mover o arquivo para `/usr/local/bin`.
 
