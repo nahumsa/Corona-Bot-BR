@@ -1,5 +1,5 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
-from corona_brasil import Coronavirus
+from corona_brasil import Coronavirus_WorldOmeter
 import numpy as np
 import tweepy 
 
@@ -12,7 +12,7 @@ api = tweepy.API(auth)
 def run():
     """Running the coronavirus bot.
     """
-    bot = Coronavirus()
+    bot = Coronavirus_WorldOmeter()
     bot.get_data()
     with open('temp.txt', 'w') as f:
         f.write(bot.update())
@@ -20,6 +20,8 @@ def run():
     with open('temp.txt','r') as f:
         api.update_status(f.read())
 
-scheduler = BlockingScheduler()
-scheduler.add_job(run,  'cron', hour='7-20')
-scheduler.start()
+if __name__ == '__main__':
+    scheduler = BlockingScheduler()
+    scheduler.add_job(run,  'cron', hour='7-23')
+    scheduler.start()
+    #run()
