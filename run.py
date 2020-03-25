@@ -1,5 +1,6 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
 from corona_brasil import Coronavirus_WorldOmeter
+from datetime import datetime
 import numpy as np
 import tweepy 
 
@@ -21,7 +22,9 @@ def run():
         api.update_status(f.read())
 
 def run_text():
-    T = "Lembrem-se: \n Higienize as mãos com água e sabão, ou alcool em gel se tiver fora de casa, por pelo menos 20 segundos!"
+    now = datetime.now() 
+    dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+    T = f"Lembrem-se: \nHigienize as mãos com água e sabão, ou alcool em gel se tiver fora de casa, por pelo menos 20 segundos! \n {dt_string}"
     with open('temp.txt', 'w') as f:
         f.write(T)
     
