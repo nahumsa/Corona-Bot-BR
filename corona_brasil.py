@@ -60,8 +60,7 @@ class Coronavirus_WorldOmeter():
     """
     def __init__(self):
         self.driver = webdriver.Chrome()
-    
-    # DEPRACATED
+        
     def update(self):                
         """Update the bot.
         
@@ -74,26 +73,27 @@ class Coronavirus_WorldOmeter():
             new_cases = self.data[2]
             total_deaths = self.data[3]
             new_deaths = self.data[4]
-            total_recovered = self.data[5]
-            active_cases = self.data[6]
-            serious_cases = self.data[7]
-            tot_cases_p_1m = self.data[8]
+            #total_recovered = self.data[5]
+            #active_cases = self.data[6]
+            #serious_cases = self.data[7]
+            #tot_cases_p_1m = self.data[8]
 
             now = datetime.now()         
             dt_string = now.strftime("%d/%m/%Y %H:%M:%S")    
 
-           #print(f"País: {country}")
-           #print(f"Casos Totais: {total_cases}")
-           #print(f"Casos Novos: {new_cases}")
-           #print(f"Mortes: {total_deaths}")
-           #print(f"Novas Mortes: {new_deaths}")
-           #print(f"Pacientes Recuperados: {total_recovered}")
-           #print(f"Casos Ativos: {active_cases}")
-           #print(f"Casos Sérios: {serious_cases}")
-           #print(f"Total de casos por 1 milhão de habitantes: {tot_cases_p_1m}")
-           #print(f"Data e Hora : {dt_string}")
-            
-            return f"País: {country}\nCasos Totais: {total_cases}\nCasos Novos: {new_cases}\nMortes: {total_deaths}\nNovas Mortes: {new_deaths}\nData e Hora : {dt_string}\nDados de : https://www.worldometers.info/coronavirus/ \n#coronavirus"                                                
+            #print(f"País: {country}")
+            #print(f"Casos Totais: {total_cases}")
+            #print(f"Casos Novos: {new_cases}")
+            #print(f"Mortes: {total_deaths}")
+            #print(f"Novas Mortes: {new_deaths}")
+            #print(f"Pacientes Recuperados: {total_recovered}")
+            #print(f"Casos Ativos: {active_cases}")
+            #print(f"Casos Sérios: {serious_cases}")
+            #print(f"Total de casos por 1 milhão de habitantes: {tot_cases_p_1m}")
+            #print(f"Data e Hora : {dt_string}")
+
+            print('Working')
+            return f"País: {country}\nCasos Totais: {total_cases}\nCasos Novos: {new_cases}\nMortes: {total_deaths}\nData e Hora : {dt_string}\nDados de : https://www.worldometers.info/coronavirus/ \n#coronavirus"                                                
         
         except:
             now = datetime.now() 
@@ -108,12 +108,12 @@ class Coronavirus_WorldOmeter():
         """
         try:        
             self.driver.get('https://www.worldometers.info/coronavirus/')
-            time.sleep(10)
+            time.sleep(30)
             table = self.driver.find_element_by_xpath('/html/body/div[3]/div[3]/div/div[3]/div[1]/div/table')
             country_element = table.find_element_by_xpath("//td[contains(., 'Brazil')]")
             row = country_element.find_element_by_xpath('./..')
-            self.data = row.text.split(" ")                        
-
+            self.data = row.text.split(" ")
+            print(self.data)
             self.driver.close()            
             
 

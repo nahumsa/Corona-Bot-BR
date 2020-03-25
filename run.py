@@ -13,15 +13,23 @@ def run():
     """Running the coronavirus bot.
     """
     bot = Coronavirus_WorldOmeter()
-    bot.get_data()
+    bot.get_data()    
     with open('temp.txt', 'w') as f:
         f.write(bot.update())
     
     with open('temp.txt','r') as f:
         api.update_status(f.read())
 
+def run_text():
+    T = "Lembrem-se: \n Higienize as mãos com água e sabão, ou alcool em gel se tiver fora de casa, por pelo menos 20 segundos!"
+    with open('temp.txt', 'w') as f:
+        f.write(T)
+    
+    with open('temp.txt','r') as f:
+        api.update_status(f.read())
+
 if __name__ == '__main__':
-    scheduler = BlockingScheduler()
-    scheduler.add_job(run,  'cron', hour='7-23')
-    scheduler.start()
-    #run()
+    scheduler = BlockingScheduler()    
+    scheduler.add_job(run,  'cron', hour='7-23')    
+    scheduler.add_job(run_text,  'cron', hour='7-23', minute='30')
+    scheduler.start()    
