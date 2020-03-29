@@ -70,9 +70,16 @@ class Coronavirus_WorldOmeter():
         try:
             country = self.data[0]
             total_cases = self.data[1]
-            new_cases = self.data[2]
-            total_deaths = self.data[3]
-            new_deaths = self.data[4]
+
+            if self.data[2][0] != '+':
+                new_cases = '+0'
+                total_deaths = self.data[2]
+                new_deaths = self.data[3]    
+            else:
+                new_cases = self.data[2]
+                total_deaths = self.data[3]
+                new_deaths = self.data[4]
+
             #total_recovered = self.data[5]
             #active_cases = self.data[6]
             #serious_cases = self.data[7]
